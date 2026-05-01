@@ -7,9 +7,9 @@ y <- 2 * x + rnorm(100)
 
 data <- data.frame(x, y)
 
-model <- lm(y ~ x, data = data)
+model <- lm(y ~ x, data = data) # what is ~ ? formula interface
 
-ggplot(data, aes(x = x, y = y)) +
+ggplot(data, aes(x = x, y = y)) + # what is aes ? aesthetics
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title = "namathan")
