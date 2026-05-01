@@ -1,16 +1,19 @@
 install.packages("arules")
 library(arules)
+
 data("Groceries")
 head(Groceries)
 tail(Groceries)
 summary(Groceries)
 sum(is.na(Groceries))
 inspect(head(Groceries))
+
 rules <- apriori(Groceries, parameter = list(supp = 0.01, conf = 0.5))
 inspect(rules)
 
 sorted_rules <- sort(rules, by = "lift")
 inspect(sorted_rules)
+
 milk_rules <- subset(sorted_rules, items %in% "whole milk")
 inspect(milk_rules)
 

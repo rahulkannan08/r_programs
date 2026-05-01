@@ -11,6 +11,11 @@ print("Summary of Employee Data Frame:")
 print(summary(emp_data))
 new_emp <- data.frame(emp_name = "sabari", emp_age = 28, emp_sal = 75000, emp_dept = "it", emp_exp = 8)
 emp_data <- rbind(emp_data, new_emp)
+
+new_cl <- data.frame(emp_per = c (1))
+
+emp_data <- cbind(emp_data, new_cl)
+
 cat("\n\nEmployee database after addition:\n\n")
 print(emp_data)
 choice <- readline(prompt = "Wanna delete any employee record? (y/n): ")

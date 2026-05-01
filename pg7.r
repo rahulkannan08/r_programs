@@ -2,6 +2,7 @@ covid_data <- read.csv("C:/Users/rahul/OneDrive/Desktop/R_programs/covid_data.cs
 
 covid_data$Symptoms <- factor(covid_data$Symptoms)
 covid_data$Affected <- factor(covid_data$Affected)
+
 model <- glm(Affected ~ Age + Temperature + Symptoms, data = covid_data, family = binomial)
 predict_covid_status <- function(age, temperature, symptoms) {
   new_data <- data.frame(Age = age, Temperature = temperature, Symptoms = factor(symptoms, levels = levels(covid_data$Symptoms)))
